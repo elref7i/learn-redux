@@ -14,7 +14,7 @@ export default function About() {
         <h1 className="text-xl font-bold">About Page {counter}</h1>
         <button
           onClick={() => {
-            dispatch(decrease());
+            dispatch(decrease(5));
           }}
           className="bg-red-500 text-white p-3 rounded-lg text-lg px-3 py-2 my-4"
         >

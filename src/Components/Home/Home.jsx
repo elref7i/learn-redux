@@ -6,7 +6,6 @@ export default function Home() {
     return store.counterReducer;
   });
   const { increase } = actions;
-  console.log(increase);
   //* return Function
   const dispatch = useDispatch(increase);
   return (
@@ -18,7 +17,7 @@ export default function Home() {
             //* increase =? ActionCreator
             //* لما اعمل كول بيرجعلى اوبجكت الديسباتش محتاجاه
             //* دا اللى بيرجع بعد الكول {type:"",payload:fun}
-            dispatch(increase());
+            dispatch(increase(5));
           }}
           className="bg-green-500 text-white p-3 rounded-lg text-lg px-3 py-2 my-4"
         >

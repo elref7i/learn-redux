@@ -9,11 +9,11 @@ const counterReducer = createSlice({
     counter: 0,
   },
   reducers: {
-    increase: function (previousState) {
-      previousState.counter += 1;
+    increase: function (previousState, { payload }) {
+      previousState.counter += payload;
     },
-    decrease: function (previousState) {
-      previousState.counter -= 1;
+    decrease: function (previousState, { payload }) {
+      previousState.counter -= payload;
     },
   },
 });

@@ -1,13 +1,24 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { actions } from '../../App/Counter.slice';
+import { useEffect } from 'react';
+import { getproducts } from '../../App/products.slice';
 
 export default function Home() {
   const { counter } = useSelector(function (store) {
     return store.counterReducer;
   });
+  const { data, isError, isLoading, isFetched, error, isPending } = useSelector(
+    function (store) {
+      return store.productReducer;
+    }
+  );
+
   const { increase } = actions;
   //* return Function
-  const dispatch = useDispatch(increase);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getproducts());
+  }, []);
   return (
     <>
       <div className="border-blue-400 p-3 border-2 border-solid">
